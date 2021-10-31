@@ -21,6 +21,7 @@ http.Server((req, res) => {
 
     }
     else {
+        res.writeHead(200, {...CORS, 'Content-Type': 'text/plain'});
         res.end('OK');
     }
 }).listen(port)
