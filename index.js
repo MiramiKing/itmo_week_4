@@ -1,4 +1,5 @@
 const http = require('http');
+const port = process.env.PORT || 3000;
 let CORS = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
@@ -14,9 +15,9 @@ http.Server((req, res) => {
             'x-body': req?.body
         };
 
-        res.writeHead(200,{...CORS, 'Content-Type': 'application/json'});
+        res.writeHead(200, {...CORS, 'Content-Type': 'application/json'});
         res.end(JSON.stringify(result));
 
 
     }
-}).listen(process.env.PORT)
+}).listen(port)
