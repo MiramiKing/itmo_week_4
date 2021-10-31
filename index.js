@@ -20,4 +20,7 @@ http.Server((req, res) => {
 
 
     }
+    else {
+        res.end('OK');
+    }
 }).listen(port)
